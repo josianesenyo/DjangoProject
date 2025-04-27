@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un Médicament</title>
+</head>
+<body>
+    <h1>Modifier le Médicament</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Mettre à jour</button>
+    </form>
+
+    <a href="{% url 'liste_medicaments' %}">Retour à la liste</a>
+</body>
+</html>

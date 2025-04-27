@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Actes Médicaux</title>
+</head>
+<body>
+    <h1>Liste des Actes Médicaux</h1>
+
+    <a href="{% url 'ajouter_acte' %}">Ajouter un acte</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Date de création</th>
+                <th>Date de modification</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for acte in actes %}
+            <tr>
+                <td>{{ acte.nom }}</td>
+                <td>{{ acte.description }}</td>
+                <td>{{ acte.prix }} F</td>
+                <td>{{ acte.date_creation }}</td>
+                <td>{{ acte.date_modification }}</td>
+                <td>
+                    <a href="{% url 'modifier_acte' acte.id %}">Modifier</a> |
+                    <a href="{% url 'supprimer_acte' acte.id %}">Supprimer</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">Aucun acte médical enregistré.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
