@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Mes applications
+    'actes',
+    'caisse',
+    'consultations',
+    'facturation',
+    'medicaments',
+    'patients',
+
 ]
 
 MIDDLEWARE = [
